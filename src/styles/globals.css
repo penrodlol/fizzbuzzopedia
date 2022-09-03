@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'colors';
+
+body {
+  @apply font-semibold tracking-wide antialiased bg-2 text-2;
+}
+
+p {
+  @apply max-w-prose;
+}

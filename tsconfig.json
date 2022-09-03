@@ -20,6 +20,8 @@
       "@pages/*": ["src/pages/*"],
       "@components/*": ["src/components/*"],
       "@server/*": ["src/server/*"],
+      "@svg/*": ["public/svg/*"],
+      "@utils/*": ["src/utils/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
