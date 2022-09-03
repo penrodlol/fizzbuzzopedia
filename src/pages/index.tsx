@@ -9,13 +9,15 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <ul className="grid md:grid-cols-3 gap-fluid-5">
-        {languages?.map((language) => (
-          <li key={language.slug}>
-            <LanguageCard language={language} />
-          </li>
-        ))}
-      </ul>
+      <section>
+        <ul className="grid md:grid-cols-3 gap-fluid-5">
+          {languages?.map((language) => (
+            <li key={language.slug}>
+              <LanguageCard language={language} />
+            </li>
+          ))}
+        </ul>
+      </section>
     </Layout>
   );
 };
