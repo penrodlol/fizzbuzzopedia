@@ -11,7 +11,6 @@ const Language = defineDocumentType(() => ({
   fields: {
     name: { type: 'string', required: true },
     logo: { type: 'string', required: true },
-    styles: { type: 'list', of: { type: 'string' }, required: true },
     creator: { type: 'nested', of: LanguageCreator, required: true },
   },
   computedFields: {

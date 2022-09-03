@@ -2,12 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'colors';
-
 body {
   @apply font-semibold tracking-wide antialiased bg-2 text-2;
 }
 
 p {
   @apply max-w-prose;
+}
+
+:root,
+[data-theme='light'] {
+  --fg-1: theme('colors.gray.700');
+  --fg-2: theme('colors.gray.900');
+
+  --bg-1: theme('colors.stone.100');
+  --bg-2: theme('colors.stone.200');
+
+  --brand: theme('colors.indigo.400');
+}
+
+[data-theme='dark'] {
+  --fg-1: theme('colors.gray.300');
+  --fg-2: theme('colors.gray.50');
+
+  --bg-1: theme('colors.zinc.800');
+  --bg-2: theme('colors.zinc.700');
+
+  --brand: theme('colors.indigo.300');
 }

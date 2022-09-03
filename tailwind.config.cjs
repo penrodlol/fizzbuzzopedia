@@ -2,10 +2,10 @@
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
-    textColor: { 1: 'var(--fg-1)', 2: 'var(--fg-2)' },
-    backgroundColor: { 1: 'var(--bg-1)', 2: 'var(--bg-2)' },
     extend: {
-      colors: { transparent: 'transparent', brand: 'var(--brand)' },
+      textColor: { 1: 'var(--fg-1)', 2: 'var(--fg-2)' },
+      backgroundColor: { 1: 'var(--bg-1)', 2: 'var(--bg-2)' },
+      colors: { brand: 'var(--brand)' },
       maxWidth: { prose: '60ch' },
       fontSize: {
         'fluid-1': 'clamp(0.84rem, calc(0.7rem + 0.2vw), 0.84rem)',

@@ -4,7 +4,7 @@ import { createRouter } from '../create-router';
 export const languageRouter = createRouter().query('get-all', {
   resolve: ({ ctx }) =>
     ctx.languages.map((language) => ({
-      ...pick(language, ['name', 'logo', 'styles', 'slug']),
+      ...pick(language, ['name', 'logo', 'slug']),
       creator: language.creator.name,
     })),
 });
