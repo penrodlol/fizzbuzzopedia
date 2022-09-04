@@ -23,7 +23,7 @@ export const languageRouter = createRouter()
     },
   })
   .mutation('search', {
-    input: z.string().nullish(),
+    input: z.string(),
     resolve: ({ ctx, input }) => {
       const query = input?.trim().toLowerCase();
 

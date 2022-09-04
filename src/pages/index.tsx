@@ -8,7 +8,8 @@ import type { GetStaticProps, NextPage } from 'next';
 const Home: NextPage = () => {
   const utils = trpc.useContext();
 
-  const { data: languages } = trpc.useQuery(['language.get-all']);
+  const languages = trpc.useQuery(['language.get-all']);
+
   const { mutate: search } = trpc.useMutation(['language.search'], {
     onSuccess: (filteredLanguages) => {
       utils.cancelQuery(['language.get-all']);
@@ -19,9 +20,9 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <section className="flex flex-col gap-fluid-4">
-        <LanguageSearch onSearch={search} />
+        <LanguageSearch onSearch={search} onReset={() => languages.refetch()} />
         <ul className="grid lg:grid-cols-3 gap-fluid-5">
-          {languages?.map((language) => (
+          {languages.data?.map((language) => (
             <li key={language.slug}>
               <LanguageCard language={language} />
             </li>
