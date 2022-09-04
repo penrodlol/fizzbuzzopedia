@@ -1,3 +1,5 @@
+import { LanguageHeader } from '@components/LanguageHeader';
+import { LanguageMDX } from '@components/LanguageMDX';
 import { Layout } from '@components/Layout';
 import { createSSG } from '@server/create-ssg';
 import { trpc } from '@utils/trpc';
@@ -8,8 +10,6 @@ import {
   InferGetStaticPropsType,
   NextPage,
 } from 'next';
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import Image from 'next/image';
 
 interface StaticProps {
   slug: string;
@@ -19,27 +19,19 @@ const Language: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   slug,
 }) => {
   const { data: language } = trpc.useQuery(['language.get', slug]);
-  const MDX = useMDXComponent(language?.content ?? '');
 
   return (
     <Layout>
       {language && (
-        <section className="bg-1 p-4 rounded-md shadow-xl">
-          <div className="flex items-center gap-5">
-            <Image
-              src={language.logo}
-              alt={`${language.name} Logo`}
-              width="50"
-              height="50"
-              className="grayscale"
-            />
-            <h1 className="text-fluid-7">{language.name}</h1>
-          </div>
-        </section>
+        <>
+          <section>
+            <LanguageHeader language={language} />
+          </section>
+          <section>
+            <LanguageMDX content={language.content} />
+          </section>
+        </>
       )}
-      <section>
-        <MDX />
-      </section>
     </Layout>
   );
 };
