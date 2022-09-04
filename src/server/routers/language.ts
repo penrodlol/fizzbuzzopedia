@@ -21,4 +21,18 @@ export const languageRouter = createRouter()
         content: language.body.code,
       };
     },
+  })
+  .mutation('search', {
+    input: z.string().nullish(),
+    resolve: ({ ctx, input }) => {
+      const query = input?.trim().toLowerCase();
+
+      if (!query) return [];
+
+      return ctx.languages
+        .filter((language) => language.slug.startsWith(query))
+        .map((language) =>
+          pick(language, ['name', 'logo', 'released', 'slug']),
+        );
+    },
   });
