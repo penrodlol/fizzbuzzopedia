@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'colors';
+@import 'prism';
+
+body {
+  @apply font-semibold tracking-wide antialiased bg-2 text-2 text-fluid-3;
+}
+
+p {
+  @apply max-w-prose;
+}

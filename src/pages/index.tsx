@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     <Layout>
       <section className="flex flex-col gap-fluid-4">
         <LanguageSearch onSearch={search} onReset={() => languages.refetch()} />
-        <ul className="grid lg:grid-cols-3 gap-fluid-5">
+        <ul className="grid lg:grid-cols-3 gap-fluid-4">
           {languages.data?.map((language) => (
             <li key={language.slug}>
               <LanguageCard language={language} />

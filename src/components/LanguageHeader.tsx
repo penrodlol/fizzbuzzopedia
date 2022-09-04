@@ -7,7 +7,7 @@ export interface LanguageHeaderProps {
 }
 
 export const LanguageHeader: FC<LanguageHeaderProps> = ({ language }) => (
-  <div className="bg-1 p-4 rounded-md shadow-xl">
+  <div className="bg-1 py-4 px-8 rounded-md shadow-sm">
     <span className="text-1 text-fluid-3 leading-4">
       Est. {language.released}
     </span>

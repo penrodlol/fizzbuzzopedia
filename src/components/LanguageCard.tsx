@@ -13,7 +13,7 @@ export const LanguageCard: FC<LanguageCardProps> = ({ language }) => (
     <a
       aria-label={language.name}
       className="group flex flex-col bg-1 rounded-lg shadow-xl hover:shadow-2xl
-                 hover:outline hover:outline-2 hover:outline-brand hover:outline-offset-4"
+                 hover:outline hover:outline-2 hover:outline-brand-2 hover:outline-offset-4"
     >
       <span className="pt-5 px-6 text-1 text-fluid-2 leading-4">
         Est. {language.released}
@@ -32,7 +32,7 @@ export const LanguageCard: FC<LanguageCardProps> = ({ language }) => (
         className="self-end flex items-center gap-2 shadow-sm py-1 px-2 bg-2
                    rounded-br-md rounded-tl-md"
       >
-        <ArrowRightIcon className="w-4 h-4 fill-brand" />
+        <ArrowRightIcon className="w-4 h-4" />
       </div>
     </a>
   </Link>

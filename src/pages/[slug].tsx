@@ -23,14 +23,14 @@ const Language: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <Layout>
       {language && (
-        <>
+        <div className="flex flex-col gap-fluid-4">
           <section>
             <LanguageHeader language={language} />
           </section>
           <section>
             <LanguageMDX content={language.content} />
           </section>
-        </>
+        </div>
       )}
     </Layout>
   );

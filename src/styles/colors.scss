@@ -1,15 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  @apply font-semibold tracking-wide antialiased bg-2 text-2 text-fluid-3;
-}
-
-p {
-  @apply max-w-prose;
-}
-
 :root,
 [data-theme='light'] {
   --fg-1: theme('colors.gray.600');
@@ -18,7 +6,8 @@ p {
   --bg-1: theme('colors.stone.100');
   --bg-2: theme('colors.stone.200');
 
-  --brand: theme('colors.indigo.400');
+  --brand-1: rgb(186, 194, 215);
+  --brand-2: rgb(170, 186, 225);
 }
 
 [data-theme='dark'] {
@@ -28,5 +17,6 @@ p {
   --bg-1: theme('colors.zinc.800');
   --bg-2: theme('colors.zinc.700');
 
-  --brand: theme('colors.indigo.300');
+  --brand-1: rgb(157, 180, 237);
+  --brand-2: rgb(183, 200, 244);
 }

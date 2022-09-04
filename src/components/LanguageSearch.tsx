@@ -17,19 +17,24 @@ export const LanguageSearch: FC<LanguageSearchProps> = ({
     onSubmit={({ q }) => onSearch(q)}
     onReset={onReset}
   >
-    {({ isSubmitting }) => (
+    {({ isSubmitting, isValid }) => (
       <Form className="flex gap-3">
-        <Field name="q" required>
+        <Field name="q">
           {({ field }: FieldProps) => (
             <Input
               {...field}
               placeholder="Search Language"
               aria-label="Search Language"
+              required
             />
           )}
         </Field>
         <Button type="submit">Search</Button>
-        {isSubmitting && <Button type="reset">Reset</Button>}
+        {isSubmitting && isValid && (
+          <Button type="reset" variant="secondary">
+            Reset
+          </Button>
+        )}
       </Form>
     )}
   </Formik>
