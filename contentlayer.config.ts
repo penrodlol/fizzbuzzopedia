@@ -1,8 +1,4 @@
-import {
-  defineDocumentType,
-  defineNestedType,
-  makeSource,
-} from 'contentlayer/source-files';
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
 const Language = defineDocumentType(() => ({
   name: 'Language',
@@ -11,21 +7,13 @@ const Language = defineDocumentType(() => ({
   fields: {
     name: { type: 'string', required: true },
     logo: { type: 'string', required: true },
-    creator: { type: 'nested', of: LanguageCreator, required: true },
+    released: { type: 'string', required: true },
   },
   computedFields: {
     slug: {
       type: 'string',
       resolve: (source) => source._id.replace('.mdx', ''),
     },
-  },
-}));
-
-const LanguageCreator = defineNestedType(() => ({
-  name: 'LanguageCreator',
-  fields: {
-    name: { type: 'string', required: true },
-    url: { type: 'string', required: true },
   },
 }));
 

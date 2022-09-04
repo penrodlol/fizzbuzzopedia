@@ -5,10 +5,9 @@ import { createRouter } from '../create-router';
 export const languageRouter = createRouter()
   .query('get-all', {
     resolve: ({ ctx }) =>
-      ctx.languages.map((language) => ({
-        ...pick(language, ['name', 'logo', 'slug']),
-        creator: language.creator.name,
-      })),
+      ctx.languages.map((language) =>
+        pick(language, ['name', 'logo', 'released', 'slug']),
+      ),
   })
   .query('get', {
     input: z.string(),
@@ -18,8 +17,7 @@ export const languageRouter = createRouter()
       if (!language) return null;
 
       return {
-        ...pick(language, ['name', 'logo', 'slug']),
-        creator: pick(language.creator, ['name', 'url']),
+        ...pick(language, ['name', 'logo', 'released', 'slug']),
         content: language.body.code,
       };
     },

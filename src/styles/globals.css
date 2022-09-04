@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-semibold tracking-wide antialiased bg-2 text-2;
+  @apply font-semibold tracking-wide antialiased bg-2 text-2 text-fluid-3;
 }
 
 p {
@@ -12,7 +12,7 @@ p {
 
 :root,
 [data-theme='light'] {
-  --fg-1: theme('colors.gray.700');
+  --fg-1: theme('colors.gray.600');
   --fg-2: theme('colors.gray.900');
 
   --bg-1: theme('colors.stone.100');

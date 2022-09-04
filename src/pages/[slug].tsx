@@ -33,7 +33,7 @@ const Language: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               height="50"
               className="grayscale"
             />
-            <h1 className="text-fluid-6">{language.name}</h1>
+            <h1 className="text-fluid-7">{language.name}</h1>
           </div>
         </section>
       )}

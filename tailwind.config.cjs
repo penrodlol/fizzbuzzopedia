@@ -7,6 +7,7 @@ module.exports = {
       backgroundColor: { 1: 'var(--bg-1)', 2: 'var(--bg-2)' },
       colors: { brand: 'var(--brand)' },
       maxWidth: { prose: '60ch' },
+      content: { blank: '""' },
       fontSize: {
         'fluid-1': 'clamp(0.84rem, calc(0.7rem + 0.2vw), 0.84rem)',
         'fluid-2': 'clamp(0.99rem, calc(0.82rem + 0.32vw), 1.05rem)',
