@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import prism from 'rehype-prism-plus';
 
 const Language = defineDocumentType(() => ({
   name: 'Language',
@@ -20,4 +21,5 @@ const Language = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Language],
+  mdx: { rehypePlugins: [prism] },
 });
