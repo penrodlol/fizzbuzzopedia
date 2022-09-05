@@ -1,6 +1,5 @@
 import { LanguageHeader } from '@components/LanguageHeader';
 import { LanguageMDX } from '@components/LanguageMDX';
-import { Layout } from '@components/Layout';
 import { createSSG } from '@server/create-ssg';
 import ArrowLeftIcon from '@svg/arrow-left.svg';
 import { trpc } from '@utils/trpc';
@@ -23,30 +22,28 @@ const Language: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const { data: language } = trpc.useQuery(['language.get', slug]);
 
   return (
-    <Layout>
-      <div className="flex flex-col gap-fluid-4">
-        <Link href="/" passHref>
-          <a className="group flex items-center gap-2 text-fluid-2">
-            <ArrowLeftIcon
-              className="h-5 w-5 fill-brand-2 group-hover:fill-brand-1"
-              aria-hidden
-            />
-            <span className="group-hover:text-1">Back</span>
-          </a>
-        </Link>
-        {language && (
-          <div className="flex flex-col gap-fluid-4">
-            <section>
-              <LanguageHeader language={language} />
-            </section>
-            <div className="h-2 w-full bg-1 rounded-md" />
-            <section>
-              <LanguageMDX content={language.content} />
-            </section>
-          </div>
-        )}
-      </div>
-    </Layout>
+    <div className="flex flex-col gap-fluid-4">
+      <Link href="/" passHref>
+        <a className="group flex items-center gap-2 text-fluid-2">
+          <ArrowLeftIcon
+            className="h-5 w-5 fill-brand-2 group-hover:fill-brand-1"
+            aria-hidden
+          />
+          <span className="group-hover:text-1">Back</span>
+        </a>
+      </Link>
+      {language && (
+        <div className="flex flex-col gap-fluid-4">
+          <section>
+            <LanguageHeader language={language} />
+          </section>
+          <div className="h-2 w-full bg-1 rounded-md" />
+          <section>
+            <LanguageMDX content={language.content} />
+          </section>
+        </div>
+      )}
+    </div>
   );
 };
 
