@@ -24,7 +24,7 @@ export const LanguageCard: FC<LanguageCardProps> = ({ language }) => (
           alt={`${language.name} logo`}
           width="30"
           height="30"
-          className="grayscale"
+          className="grayscale-[0.65] contrast-75"
         />
         <h2 className="text-fluid-5">{language.name}</h2>
       </div>
@@ -32,7 +32,7 @@ export const LanguageCard: FC<LanguageCardProps> = ({ language }) => (
         className="self-end flex items-center gap-2 shadow-sm py-1 px-2 bg-2
                    rounded-br-md rounded-tl-md"
       >
-        <ArrowRightIcon className="w-4 h-4" />
+        <ArrowRightIcon className="w-5 h-5" />
       </div>
     </a>
   </Link>

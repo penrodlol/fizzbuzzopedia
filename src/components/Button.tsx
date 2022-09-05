@@ -13,7 +13,7 @@ export const Button: FC<ButtonProps> = ({ children, ...props }) => (
   <button
     {...props}
     className={`
-      rounded-md shadow-lg text-xl font-bold px-8 py-[0.8rem]
+      cursor-pointer rounded-md shadow-lg text-xl font-bold px-8 py-[0.8rem]
       ${VARIANTS[props.variant ?? 'primary']}`}
   >
     {children}
