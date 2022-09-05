@@ -6,6 +6,7 @@ module.exports = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
   env: {
+    REPO: 'https://github.com/penrodlol/fizzbuzzopedia',
     COPYRIGHT_YEAR: dayjs().year(),
     LAST_UPDATE: dayjs().format('YYYY-MM-DD hh:mm A'),
   },
