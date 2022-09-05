@@ -1,13 +1,15 @@
 @import 'prism-theme-vars/base.css';
 
 :root {
-  --prism-background: theme('backgroundColor.1');
-  --prism-foreground: theme('textColor.2');
-  --prism-keyword: theme('colors.brand.2');
-  --prism-string: theme('textColor.1');
-  --prism-class: theme('textColor.2');
-  // --prism-number: theme('colors.accent');
-  --prism-function: theme('textColor.2');
-  --prism-punctuation: theme('textColor.1');
-  --prism-operator: theme('textColor.1');
+  --prism-background: theme('colors.zinc.900');
+  --prism-foreground: theme('colors.indigo.400');
+  --prism-selection-background: theme('colors.slate.700');
+  --prism-keyword: theme('colors.violet.300');
+  --prism-string: theme('colors.slate.400');
+  --prism-class: theme('colors.slate.300');
+  --prism-number: theme('colors.indigo.400');
+  --prism-function: theme('colors.slate.300');
+  --prism-punctuation: theme('colors.slate.300');
+  --prism-operator: theme('colors.slate.300');
+  --prism-property: theme('colors.slate.300');
 }

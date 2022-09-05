@@ -27,6 +27,7 @@ const Language: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <section>
             <LanguageHeader language={language} />
           </section>
+          <div className="h-2 w-full bg-1 rounded-md" />
           <section>
             <LanguageMDX content={language.content} />
           </section>

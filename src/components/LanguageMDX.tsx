@@ -9,7 +9,7 @@ export interface LanguageMDXProps {
 export const LanguageMDX: FC<LanguageMDXProps> = ({ content }) => {
   const MDX = useMDXComponent(content);
   return (
-    <div className="shadow-xl rounded-md">
+    <div className="rounded-md shadow-2xl">
       <MDX />
     </div>
   );

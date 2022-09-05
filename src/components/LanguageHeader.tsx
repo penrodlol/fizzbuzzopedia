@@ -7,7 +7,7 @@ export interface LanguageHeaderProps {
 }
 
 export const LanguageHeader: FC<LanguageHeaderProps> = ({ language }) => (
-  <div className="bg-1 py-4 px-8 rounded-md shadow-sm">
+  <div>
     <span className="text-1 text-fluid-3 leading-4">
       Est. {language.released}
     </span>
@@ -17,7 +17,7 @@ export const LanguageHeader: FC<LanguageHeaderProps> = ({ language }) => (
         alt={`${language.name} Logo`}
         width="50"
         height="50"
-        className="grayscale-[0.65] contrast-75"
+        className="grayscale"
       />
       <h1 className="text-fluid-7">{language.name}</h1>
     </div>
