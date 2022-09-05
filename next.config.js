@@ -1,9 +1,14 @@
 const { withContentlayer } = require('next-contentlayer');
+const dayjs = require('dayjs');
 
 /** @type {import('next').NextConfig} */
 module.exports = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    COPYRIGHT_YEAR: dayjs().year(),
+    LAST_UPDATE: dayjs().format('YYYY-MM-DD hh:mm A'),
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

@@ -8,7 +8,7 @@ export const Layout = ({ children }: PropsWithChildren) => (
     <SEO />
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 px-fluid-4 py-fluid-3 max-w-screen-lg w-full mx-auto">
+      <main className="flex-1 px-fluid-4 pt-fluid-3 pb-14 max-w-screen-lg w-full mx-auto">
         {children}
       </main>
       <Footer />
