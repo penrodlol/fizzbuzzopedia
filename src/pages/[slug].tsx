@@ -1,3 +1,4 @@
+import { Back } from '@components/Back';
 import { LanguageHeader } from '@components/LanguageHeader';
 import { LanguageMDX } from '@components/LanguageMDX';
 import { Layout } from '@components/Layout';
@@ -22,17 +23,20 @@ const Language: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <Layout>
-      {language && (
-        <div className="flex flex-col gap-fluid-4">
-          <section>
-            <LanguageHeader language={language} />
-          </section>
-          <div className="h-2 w-full bg-1 rounded-md" />
-          <section>
-            <LanguageMDX content={language.content} />
-          </section>
-        </div>
-      )}
+      <div className="flex flex-col gap-fluid-4">
+        <Back />
+        {language && (
+          <div className="flex flex-col gap-fluid-4">
+            <section>
+              <LanguageHeader language={language} />
+            </section>
+            <div className="h-2 w-full bg-1 rounded-md" />
+            <section>
+              <LanguageMDX content={language.content} />
+            </section>
+          </div>
+        )}
+      </div>
     </Layout>
   );
 };
