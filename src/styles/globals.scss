@@ -17,3 +17,12 @@ body {
 p {
   @apply max-w-prose;
 }
+
+a,
+button,
+input {
+  @apply focus-visible:outline
+         focus-visible:outline-2
+         focus-visible:outline-brand-1
+         focus-visible:outline-offset-4;
+}
