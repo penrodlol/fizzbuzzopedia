@@ -1,7 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": "./tsconfig.json" },
-  "ignorePatterns": ["next.config.js", "public/scripts/*.js"],
+  "ignorePatterns": ["*.config.js", "public/scripts/*.js"],
   "plugins": ["@typescript-eslint"],
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"]
 }
