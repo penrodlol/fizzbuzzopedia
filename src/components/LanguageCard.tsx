@@ -25,6 +25,7 @@ export const LanguageCard: FC<LanguageCardProps> = ({ language }) => (
             alt={`${language.name} logo`}
             width="30"
             height="30"
+            quality="1"
             className="grayscale"
           />
           <h2 className="text-fluid-5 group-hover:text-brand-1">

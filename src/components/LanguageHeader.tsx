@@ -17,6 +17,7 @@ export const LanguageHeader: FC<LanguageHeaderProps> = ({ language }) => (
         alt={`${language.name} Logo`}
         width="50"
         height="50"
+        quality="1"
         className="grayscale"
       />
       <h1 className="text-fluid-7">{language.name}</h1>
