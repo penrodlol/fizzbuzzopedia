@@ -3,20 +3,26 @@
   --fg-1: theme('colors.gray.600');
   --fg-2: theme('colors.gray.900');
 
-  --bg-1: theme('colors.stone.100');
-  --bg-2: theme('colors.stone.200');
+  --bg-1: rgb(221, 228, 240);
+  --bg-2: theme('colors.white');
 
-  --brand-1: rgb(186, 194, 215);
-  --brand-2: rgb(170, 186, 225);
+  --brand-2: theme('colors.indigo.400');
+  --brand-1: theme('colors.indigo.500');
+
+  --accent-1: theme('colors.slate.200');
+  --accent-2: theme('colors.slate.300');
 }
 
 [data-theme='dark'] {
   --fg-1: theme('colors.gray.300');
-  --fg-2: theme('colors.gray.50');
+  --fg-2: theme('colors.white');
 
-  --bg-1: theme('colors.zinc.800');
-  --bg-2: theme('colors.zinc.700');
+  --bg-1: rgb(32, 31, 31);
+  --bg-2: rgb(42, 45, 46);
 
-  --brand-1: rgb(157, 180, 237);
-  --brand-2: rgb(183, 200, 244);
+  --brand-1: theme('colors.indigo.300');
+  --brand-2: theme('colors.indigo.200');
+
+  --accent-1: theme('colors.slate.300');
+  --accent-2: theme('colors.slate.200');
 }

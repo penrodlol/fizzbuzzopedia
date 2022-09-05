@@ -27,7 +27,10 @@ export const Header = () => {
     <header className="sticky top-0 left-0 right-0 z-50">
       <nav className="py-4 px-fluid-4 max-w-screen-2xl mx-auto my-0">
         <ul className="flex items-center justify-between text-xl">
-          <li className="text-fluid-4">
+          <li
+            className="text-fluid-4 font-extrabold text-transparent bg-clip-text
+                       bg-gradient-to-r from-brand-1 to-brand-2"
+          >
             <Route href="/" passHref>
               Fizzbuzzopedia
             </Route>

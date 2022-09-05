@@ -2,10 +2,14 @@
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
+    fontFamily: { serif: ["'Nunito', system-ui"] },
     extend: {
       textColor: { 1: 'var(--fg-1)', 2: 'var(--fg-2)' },
       backgroundColor: { 1: 'var(--bg-1)', 2: 'var(--bg-2)' },
-      colors: { brand: { 1: 'var(--brand-1)', 2: 'var(--brand-2)' } },
+      colors: {
+        brand: { 1: 'var(--brand-1)', 2: 'var(--brand-2)' },
+        accent: { 1: 'var(--accent-1)', 2: 'var(--accent-2)' },
+      },
       maxWidth: { prose: '60ch' },
       content: { blank: '""' },
       fontSize: {

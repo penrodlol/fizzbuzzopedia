@@ -1,3 +1,7 @@
+@import '@fontsource/nunito';
+@import '@fontsource/nunito/600.css';
+@import '@fontsource/nunito/800.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +10,8 @@
 @import 'prism';
 
 body {
-  @apply font-semibold tracking-wide antialiased bg-2 text-2 text-fluid-3;
+  @apply font-serif font-bold tracking-wide antialiased bg-2
+         text-2 text-fluid-3;
 }
 
 p {
