@@ -12,7 +12,7 @@ const THEMES: Record<Theme, ReactNode> = {
 };
 
 export const Header = () => {
-  const [theme, setTheme] = useState<Theme | null>(null);
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => setTheme(localStorage.getItem('theme') as Theme), []);
 
@@ -47,14 +47,16 @@ export const Header = () => {
               aria-label="Github repository"
             >
               <GithubIcon
-                className="w-7 h-7 fill-brand-2"
+                className="w-8 h-8 fill-brand-2"
                 aria-hidden
                 focusable="false"
               />
             </a>
           </li>
-          <li className="text-brand-2">
-            <button onClick={toggle}>{theme && THEMES[theme]}</button>
+          <li className="flex text-brand-2 mt-1">
+            <button className="rounded-md" onClick={toggle}>
+              {THEMES[theme]}
+            </button>
           </li>
         </ul>
       </nav>
