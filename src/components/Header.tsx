@@ -24,7 +24,7 @@ export const Header = () => {
   }, [theme]);
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-2">
       <nav className="py-4 px-fluid-4 max-w-screen-2xl mx-auto my-0">
         <ul className="flex items-center justify-between text-xl">
           <li
@@ -35,7 +35,7 @@ export const Header = () => {
               Fizzbuzzopedia
             </Route>
           </li>
-          <li className="w-9 h-9">
+          <li className="w-9 h-9 text-brand-2">
             <button onClick={toggle}>{theme && THEMES[theme]}</button>
           </li>
         </ul>

@@ -18,7 +18,7 @@ export const LanguageSearch: FC<LanguageSearchProps> = ({
     onReset={onReset}
   >
     {({ isSubmitting, isValid }) => (
-      <Form className="flex gap-3">
+      <Form className="flex flex-col sm:flex-row gap-3">
         <Field name="q">
           {({ field }: FieldProps) => (
             <Input
