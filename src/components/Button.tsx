@@ -6,7 +6,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const VARIANTS: Record<NonNullable<ButtonProps['variant']>, string> = {
   primary: 'bg-accent-2 text-black hover:bg-accent-1',
-  secondary: 'outline outline-accent-2 outline-2 hover:text-accent-2',
+  secondary: 'outline outline-accent-2 outline-2 hover:text-1',
 };
 
 export const Button: FC<ButtonProps> = ({ children, ...props }) => (

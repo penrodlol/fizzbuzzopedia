@@ -53,7 +53,7 @@ export const Header = () => {
               />
             </a>
           </li>
-          <li className="flex text-brand-2 mt-1">
+          <li className="flex text-brand-2 translate-y-0.5">
             <button className="rounded-md" onClick={toggle}>
               {THEMES[theme]}
             </button>

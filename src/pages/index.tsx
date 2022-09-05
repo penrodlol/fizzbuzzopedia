@@ -26,6 +26,12 @@ const Home: NextPage = () => {
           </li>
         ))}
       </ul>
+      {languages.data && !languages.data.length && (
+        <div className="self-center text-center">
+          <h1 className="text-fluid-7 text-brand-1">No Results</h1>
+          <p>Try adjusting your search</p>
+        </div>
+      )}
     </section>
   );
 };
