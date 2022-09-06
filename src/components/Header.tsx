@@ -47,7 +47,7 @@ export const Header = () => {
               aria-label="Github repository"
             >
               <GithubIcon
-                className="w-8 h-8 fill-brand-2"
+                className="w-7 h-7 fill-brand-2"
                 aria-hidden
                 focusable="false"
               />
