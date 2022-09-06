@@ -5,7 +5,7 @@ import { Input } from './Input';
 
 export interface LanguageSearchProps {
   onSearch: (query: string) => void;
-  onReset: () => void;
+  onReset: (query: string) => void;
 }
 
 export const LanguageSearch: FC<LanguageSearchProps> = ({
@@ -15,7 +15,7 @@ export const LanguageSearch: FC<LanguageSearchProps> = ({
   <Formik<{ q: string }>
     initialValues={{ q: '' }}
     onSubmit={({ q }) => onSearch(q)}
-    onReset={onReset}
+    onReset={() => onReset('')}
   >
     {({ isSubmitting, isValid }) => (
       <Form className="flex flex-col sm:flex-row gap-3">

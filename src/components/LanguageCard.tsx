@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 export interface LanguageCardProps {
-  language: Query<'language.get-all'>[number];
+  language: Query<'language.get-many'>['languages'][number];
 }
 
 export const LanguageCard: FC<LanguageCardProps> = ({ language }) => (

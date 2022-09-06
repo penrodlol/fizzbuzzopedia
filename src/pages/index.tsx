@@ -3,30 +3,38 @@ import { LanguageSearch } from '@components/LanguageSearch';
 import { createSSG } from '@server/create-ssg';
 import { trpc } from '@utils/trpc';
 import type { GetStaticProps, NextPage } from 'next';
+import { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const Home: NextPage = () => {
-  const utils = trpc.useContext();
+  const [query, setQuery] = useState<string>('');
 
-  const languages = trpc.useQuery(['language.get-all']);
+  const paginator = trpc.useInfiniteQuery(['language.get-many', { query }], {
+    getNextPageParam: (page) => page.nextCursor,
+  });
 
-  const { mutate: search } = trpc.useMutation(['language.search'], {
-    onSuccess: (filteredLanguages) => {
-      utils.cancelQuery(['language.get-all']);
-      utils.setQueryData(['language.get-all'], filteredLanguages);
+  const [inViewRef] = useInView({
+    triggerOnce: !paginator.hasNextPage,
+    rootMargin: '0px 0px 500px 0px',
+    onChange: (inView) => {
+      if (inView && !paginator.isFetchingNextPage) paginator.fetchNextPage();
     },
   });
 
   return (
     <section className="flex flex-col gap-12">
-      <LanguageSearch onSearch={search} onReset={() => languages.refetch()} />
+      <LanguageSearch onSearch={setQuery} onReset={setQuery} />
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-fluid-3">
-        {languages.data?.map((language) => (
-          <li key={language.slug}>
-            <LanguageCard language={language} />
-          </li>
-        ))}
+        {paginator.data?.pages.map(({ languages }) =>
+          languages.map((language) => (
+            <li key={language.slug}>
+              <LanguageCard language={language} />
+            </li>
+          )),
+        )}
       </ul>
-      {languages.data && !languages.data.length && (
+      <span ref={inViewRef} />
+      {!paginator.isLoading && !paginator.data?.pages[0]?.languages.length && (
         <div className="self-center text-center">
           <h1 className="text-fluid-7 text-brand-1">No Results</h1>
           <p>Try adjusting your search</p>
@@ -39,9 +47,9 @@ const Home: NextPage = () => {
 export const getStaticProps: GetStaticProps = async () => {
   const ssg = await createSSG();
 
-  await ssg.prefetchQuery('language.get-all');
+  await ssg.prefetchInfiniteQuery('language.get-many', { query: '' });
 
-  return { props: { trpcState: ssg.dehydrate() } };
+  return { props: { trpcState: JSON.parse(JSON.stringify(ssg.dehydrate())) } };
 };
 
 export default Home;
