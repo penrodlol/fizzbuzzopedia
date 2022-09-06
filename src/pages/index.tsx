@@ -1,5 +1,6 @@
 import { LanguageCard } from '@components/LanguageCard';
 import { LanguageSearch } from '@components/LanguageSearch';
+import { SEO } from '@components/Seo';
 import { createSSG } from '@server/create-ssg';
 import { trpc } from '@utils/trpc';
 import type { GetStaticProps, NextPage } from 'next';
@@ -22,25 +23,28 @@ const Home: NextPage = () => {
   });
 
   return (
-    <section className="flex flex-col gap-12">
-      <LanguageSearch onSearch={setQuery} onReset={setQuery} />
-      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-fluid-3">
-        {paginator.data?.pages.map(({ languages }) =>
-          languages.map((language) => (
-            <li key={language.slug}>
-              <LanguageCard language={language} />
-            </li>
-          )),
+    <>
+      <SEO />
+      <section className="flex flex-col gap-12">
+        <LanguageSearch onSearch={setQuery} onReset={setQuery} />
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-fluid-3">
+          {paginator.data?.pages.map(({ languages }) =>
+            languages.map((language) => (
+              <li key={language.slug}>
+                <LanguageCard language={language} />
+              </li>
+            )),
+          )}
+        </ul>
+        <span ref={inViewRef} />
+        {!paginator.isLoading && !paginator.data?.pages[0]?.languages.length && (
+          <div className="self-center text-center">
+            <h1 className="text-fluid-7 text-brand-1">No Results</h1>
+            <p>Try adjusting your search</p>
+          </div>
         )}
-      </ul>
-      <span ref={inViewRef} />
-      {!paginator.isLoading && !paginator.data?.pages[0]?.languages.length && (
-        <div className="self-center text-center">
-          <h1 className="text-fluid-7 text-brand-1">No Results</h1>
-          <p>Try adjusting your search</p>
-        </div>
-      )}
-    </section>
+      </section>
+    </>
   );
 };
 

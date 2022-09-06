@@ -6,6 +6,7 @@ module.exports = withContentlayer({
   reactStrictMode: true,
   swcMinify: true,
   env: {
+    NAME: 'Fizzbuzzopedia',
     DOMAIN: process.env.DOMAIN,
     REPO: 'https://github.com/penrodlol/fizzbuzzopedia',
     COPYRIGHT_YEAR: dayjs().year(),

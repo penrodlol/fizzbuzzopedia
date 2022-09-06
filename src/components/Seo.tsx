@@ -1,17 +1,20 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { FC } from 'react';
 
-export const SEO = () => {
+export interface SEOProps {
+  title?: string;
+}
+
+export const SEO: FC<SEOProps> = ({ title }) => {
   const { asPath } = useRouter();
 
   return (
     <Head>
-      <title>Fizzbuzzopedia</title>
+      <title>{title ?? process.env.NAME}</title>
 
-      <meta name="title" content="Fizzbuzzopedia" />
-      <meta name="description" content="--" />
-
-      {/* <link rel="icon" type="image/svg+xml" href="/svg/favicon.svg" /> */}
+      <meta name="title" content={title ?? process.env.NAME} />
+      <meta name="description" content="An encyclopedia of FizzBuzz" />
 
       <link href={`${process.env.DOMAIN}${asPath}`} rel="canonical" />
     </Head>
