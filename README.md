@@ -33,5 +33,5 @@ released: <YYYY>
 
 ```
 
-[netlify-image]: https://api.netlify.com/api/v1/badges/f5778169-3b6b-4b80-9374-738001260e6a/deploy-status
-[netlify-url]: https://app.netlify.com/sites/bespoke-croquembouche-1063eb/deploys
+[netlify-image]: [https://api.netlify.com/api/v1/badges/f5778169-3b6b-4b80-9374-738001260e6a/deploy-status
+[netlify-url]: [https://app.netlify.com/sites/fizzbuzzopedia/deploys
