@@ -29,8 +29,7 @@ logo: /logos/<LANGUAGE>.svg
 released: <YYYY>
 ---
 
-`\`\`
-`\`\`
+<FIZZBUZZ>
 
 ```
 
