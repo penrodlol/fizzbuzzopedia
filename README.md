@@ -4,7 +4,7 @@
   <br />
   <br />
 
-  [![Netlify Status][netlify-image]][netlify-url]
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/f5778169-3b6b-4b80-9374-738001260e6a/deploy-status)](https://app.netlify.com/sites/fizzbuzzopedia/deploys)
 
 </div>
 
@@ -32,6 +32,3 @@ released: <YYYY>
 <FIZZBUZZ>
 
 ```
-
-[netlify-image]: [https://api.netlify.com/api/v1/badges/f5778169-3b6b-4b80-9374-738001260e6a/deploy-status
-[netlify-url]: [https://app.netlify.com/sites/fizzbuzzopedia/deploys
