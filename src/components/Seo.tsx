@@ -14,7 +14,7 @@ export const SEO: FC<SEOProps> = ({ title }) => {
       <title>{title ?? process.env.NAME}</title>
 
       <meta name="title" content={title ?? process.env.NAME} />
-      <meta name="description" content="An encyclopedia of FizzBuzz" />
+      <meta name="description" content="An encyclopedia of fizzbuzzes" />
 
       <link href={`${process.env.DOMAIN}${asPath}`} rel="canonical" />
     </Head>
